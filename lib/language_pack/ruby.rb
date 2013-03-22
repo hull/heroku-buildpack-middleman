@@ -629,7 +629,7 @@ params = CGI.parse(uri.query || "")
 
   def generate_middleman_site
     puts "Building middleman site"
-    pipe("env PATH=$PATH bundle exec middleman build")
+    pipe("env PATH=$PATH bundle exec middleman build --verbose")
     unless $? == 0
       error "Failed to generate site with middleman."
     end
